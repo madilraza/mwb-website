@@ -1,18 +1,12 @@
 import * as React from 'react'
-import styled from 'styled-components'
-
-const StyledLayoutRoot = styled.div `
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
+import {Container} from 'bloomer/lib/layout/Container'
 
 interface LayoutRootProps {
   className?: string
 }
 
 const LayoutRoot : React.SFC < LayoutRootProps > = ({children, className}) => (
-  <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
+  <Container isFluid className={className}>{children}</Container>
 )
 
 export default LayoutRoot

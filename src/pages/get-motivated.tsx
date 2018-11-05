@@ -5,18 +5,14 @@ import Page from '../components/Page'
 import {Section} from 'bloomer/lib/layout/Section'
 import IndexLayout from '../layouts'
 
-const NotFoundPage = () => (
+const GetMotivatedPage = () => (
   <IndexLayout>
     <Page>
-      <Section>
-        <h1>404: Page not found.</h1>
-        <p>
-          You've hit the void.
-          <Link to="/">Go back.</Link>
-        </p>
+      <Section className="content">
+        <Link to="/">Go to home page</Link>
       </Section>
     </Page>
   </IndexLayout>
 )
 
-export default NotFoundPage
+export default GetMotivatedPage

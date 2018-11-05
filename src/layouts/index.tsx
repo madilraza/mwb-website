@@ -2,8 +2,9 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 
-import 'modern-normalize'
-import '../styles/normalize'
+import 'typeface-yanone-kaffeesatz';
+import 'typeface-heebo';
+import '../styles/_bulma.scss'
 
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
@@ -31,7 +32,7 @@ const IndexLayout : React.SFC = ({children}) => (
           content: data.site.siteMetadata.description
         }, {
           name: 'keywords',
-          content: 'gatsbyjs, gatsby, javascript, sample, something'
+          content: 'gatsby, typographyjs, typescript, bulma'
         }
       ]}/>
       <Header title={data.site.siteMetadata.title}/>

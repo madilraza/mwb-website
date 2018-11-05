@@ -1,5 +1,4 @@
 {
-  "files": ["node_modules/styled-components/typings/styled-components.d.ts"],
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",

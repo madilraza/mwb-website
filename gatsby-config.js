@@ -2,7 +2,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'mentors-without-borders',
+    title: 'Mentors Without Borders',
     description: 'Connecting mentors with young dreamers around the world.',
     siteUrl: 'https://www.mentorswithoutborders.net/',
     author: {
@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     'gatsby-plugin-styled-components', {
       resolve: 'gatsby-source-filesystem',
       options: {

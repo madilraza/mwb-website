@@ -1,34 +1,25 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import {transparentize} from 'polished'
+import {Navbar} from 'bloomer/lib/components/Navbar/Navbar'
 import {Link} from 'gatsby'
+import {NavbarBrand} from 'bloomer/lib/components/Navbar/NavbarBrand'
+import {NavbarItem} from 'bloomer/lib/components/Navbar/NavbarItem'
+import logo from '../../static/logos/logo.png'
 
-import {heights, dimensions, colors} from '../styles/variables'
-import Container from './Container'
-
-const StyledHeader = styled.header `
-  height: ${heights.header}px;
-  padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${colors.brand};
-  color: ${transparentize(0.5, colors.white)};
-`
-
-const HeaderInner = styled(Container)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-`
-
-const HomepageLink = styled(Link)`
-  color: ${colors.white};
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
+const StyledLogo = styled.img `
+  width: 60px;
+  height: 60px;
+  max-height: 100%;
+  max-width: 100%;
+  @media screen and (max-width: 1087px) {
+    width: 40px;
+    height: 40px;
   }
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+  }
+  margin-bottom: 0;
 `
 
 interface HeaderProps {
@@ -36,11 +27,18 @@ interface HeaderProps {
 }
 
 const Header : React.SFC < HeaderProps > = ({title}) => (
-  <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
-  </StyledHeader>
+  <Navbar isTransparent>
+    <NavbarBrand>
+      <NavbarItem>
+        <StyledLogo src={logo}/>
+      </NavbarItem>
+      <NavbarItem>
+        <Link
+          className="title is-size-5-mobile is-size-5-tablet is-size-4-desktop"
+          to="/">{title}</Link>
+      </NavbarItem>
+    </NavbarBrand>
+  </Navbar>
 )
 
 export default Header

@@ -1,16 +1,14 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
 
 import Page from '../components/Page'
-import Container from '../components/Container'
+import {Section} from 'bloomer/lib/layout/Section'
 import IndexLayout from '../layouts'
 
-const PageTwo = () => (
+const AboutUsPage = () => (
   <IndexLayout>
     <Page>
-      <Container>
-        <h1>Hi from the second page</h1>
-        <p>Welcome to page 2</p>
+      <Section className="content">
         <ul>
           <li>
             <Link to="/a-markdown-page/">Show me some Markdown!</Link>
@@ -19,9 +17,9 @@ const PageTwo = () => (
             <Link to="/">Take me back home.</Link>
           </li>
         </ul>
-      </Container>
+      </Section>
     </Page>
   </IndexLayout>
 )
 
-export default PageTwo
+export default AboutUsPage

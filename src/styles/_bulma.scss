@@ -1,0 +1,19 @@
+@import '~bulma/sass/utilities/_all';
+@import './variables';
+
+$colors: (
+  'orange': (
+    $orange,
+    $orange-invert
+  ),
+  'yellow': (
+    $yellow,
+    $yellow-invert
+  ),
+  'info': (
+    $info,
+    $info-invert
+  )
+);
+$family-sans-serif: 'Yanone-Kaffeesatz', 'Heebo', sans-serif;
+@import '~bulma';
