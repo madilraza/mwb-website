@@ -12,6 +12,35 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./static/favicon.png",
+        appName: 'Metors Without Borders',
+        appDescription: 'Connecting mentors with young dreamers around the world.',
+        dir: 'auto',
+        lang: 'en-US',
+        background: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/?homescreen=1',
+        version: '1.0',
+
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components', {
