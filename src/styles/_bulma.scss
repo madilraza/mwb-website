@@ -1,6 +1,10 @@
 @import '~bulma/sass/utilities/_all';
 @import './variables';
 
+$family-sans-serif: 'Heebo', 'Yanone-Kaffeesatz', sans-serif;
+$family-primary: 'Heebo', 'Yanone-Kaffeesatz', sans-serif;
+$family-secondary: 'Yanone-Kaffeesatz', sans-serif;
+
 $colors: (
   'orange': (
     $orange,
@@ -15,5 +19,6 @@ $colors: (
     $info-invert
   )
 );
-$family-sans-serif: 'Yanone-Kaffeesatz', 'Heebo', sans-serif;
+$navbar-item-img-max-height: 3.75rem;
+$link: $grey-dark;
 @import '~bulma';

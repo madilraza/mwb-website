@@ -1,12 +1,17 @@
 import * as React from 'react'
-import styled from 'styled-components'
-import {Navbar} from 'bloomer/lib/components/Navbar/Navbar'
 import {Link} from 'gatsby'
-import {NavbarBrand} from 'bloomer/lib/components/Navbar/NavbarBrand'
-import {NavbarItem} from 'bloomer/lib/components/Navbar/NavbarItem'
+import styled from 'styled-components'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarItem,
+  NavbarBurger,
+  NavbarMenu,
+  NavbarEnd
+} from 'bloomer'
 import logo from '../../static/logos/logo.png'
 
-const StyledLogo = styled.img `
+const StyledLogo = styled.figure `
   width: 60px;
   height: 60px;
   max-height: 100%;
@@ -19,26 +24,100 @@ const StyledLogo = styled.img `
     width: 30px;
     height: 30px;
   }
-  margin-bottom: 0;
 `
 
-interface HeaderProps {
-  title : string
-}
+  interface HeaderProps {
+    title : string
+  }
 
-const Header : React.SFC < HeaderProps > = ({title}) => (
-  <Navbar isTransparent>
-    <NavbarBrand>
-      <NavbarItem>
-        <StyledLogo src={logo}/>
-      </NavbarItem>
-      <NavbarItem>
-        <Link
-          className="title is-size-5-mobile is-size-5-tablet is-size-4-desktop"
-          to="/">{title}</Link>
-      </NavbarItem>
-    </NavbarBrand>
-  </Navbar>
-)
+  interface State {
+    readonly isActive : boolean;
+  }
 
-export default Header
+  export default class Header extends React.PureComponent < HeaderProps,
+  State > {
+    readonly state : State = {
+      isActive: false
+    };
+
+    onClickNav = () => {
+      this.setState({
+        isActive: !this.state.isActive
+      })
+    }
+
+    render() {
+      const {title} = this.props
+      return (
+        <React.Fragment>
+          <Navbar isTransparent>
+            <NavbarBrand>
+              <NavbarItem>
+                <StyledLogo className="image is-square">
+                  <img src={logo}></img>
+                </StyledLogo>
+              </NavbarItem>
+              <NavbarItem>
+                <Link
+                  className="title is-size-5-mobile is-size-5-tablet is-size-4-desktop"
+                  to="/">{title}</Link>
+              </NavbarItem>
+              <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav}/>
+            </NavbarBrand>
+            <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
+              <NavbarEnd>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/about-us">About Us</Link>
+                </NavbarItem>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/get-motivated">Get Motivated!</Link>
+                </NavbarItem>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/partners">Partners</Link>
+                </NavbarItem>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/programming">Programming</Link>
+                </NavbarItem>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/apply-now">Apply Now</Link>
+                </NavbarItem>
+                <NavbarItem hasTextAlign="centered">
+                  <Link
+                    activeStyle={{
+                    color: '#fe5823'
+                  }}
+                    className="is-size-5 is-size-6-mobile"
+                    to="/contact">Contact</Link>
+                </NavbarItem>
+              </NavbarEnd>
+            </NavbarMenu>
+          </Navbar>
+        </React.Fragment>
+      )
+    }
+  }
