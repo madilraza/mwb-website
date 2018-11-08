@@ -24,6 +24,9 @@ const StyledLogo = styled.figure `
     width: 30px;
     height: 30px;
   }
+  img {
+    margin-bottom: 0;
+  }
 `
 
   interface HeaderProps {
@@ -59,7 +62,7 @@ const StyledLogo = styled.figure `
               </NavbarItem>
               <NavbarItem>
                 <Link
-                  className="title is-size-5-mobile is-size-5-tablet is-size-4-desktop"
+                  className="title is-size-6-mobile is-size-5-tablet is-size-4-desktop"
                   to="/">{title}</Link>
               </NavbarItem>
               <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav}/>
