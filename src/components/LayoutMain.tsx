@@ -1,18 +1,14 @@
 import * as React from 'react'
-import styled from 'styled-components'
-
-const StyledLayoutMain = styled.main `
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`
+import { Container } from 'bloomer'
 
 interface LayoutMainProps {
   className?: string
 }
 
-const LayoutMain : React.SFC < LayoutMainProps > = ({children, className}) => (
-  <StyledLayoutMain className={className}>{children}</StyledLayoutMain>
+const LayoutMain: React.SFC<LayoutMainProps> = ({ children, className }) => (
+  <Container isFluid className={className}>
+    {children}
+  </Container>
 )
 
 export default LayoutMain
