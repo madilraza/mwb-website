@@ -9,7 +9,7 @@ const PartnersPage = () => (
   <IndexLayout>
     <Page>
       <Section className="content">
-        <Link to="/">Go to home page</Link>
+
       </Section>
     </Page>
   </IndexLayout>
