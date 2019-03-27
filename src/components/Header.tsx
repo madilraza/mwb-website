@@ -2,7 +2,15 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Navbar, NavbarBrand, NavbarItem, NavbarBurger, NavbarMenu, NavbarEnd } from 'bloomer'
+import { flamingo } from '../utils/colors'
 import logo from '../../static/logos/logo.png'
+
+const StyledLink = styled(Link)`
+  font-family: 'Yanone Kaffeesatz';
+  &:hover {
+    color: ${flamingo};
+  }
+`;
 
 const StyledLogo = styled.figure`
   margin-bottom: 0;
@@ -54,7 +62,7 @@ export default class Header extends React.PureComponent<HeaderProps, State> {
               </StyledLogo>
             </NavbarItem>
             <NavbarItem>
-              <Link className="title is-size-6-mobile is-size-5-tablet is-size-4-desktop" to="/">
+              <Link className="title is-size-6-mobile is-size-4-tablet is-size-4-desktop" to="/">
                 {title}
               </Link>
             </NavbarItem>
@@ -63,70 +71,70 @@ export default class Header extends React.PureComponent<HeaderProps, State> {
           <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}>
             <NavbarEnd>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/about-us"
                 >
                   About Us
-                </Link>
+                </StyledLink>
               </NavbarItem>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/get-motivated"
                 >
                   Get Motivated!
-                </Link>
+                </StyledLink>
               </NavbarItem>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/partners"
                 >
                   Partners
-                </Link>
+                </StyledLink>
               </NavbarItem>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/programming"
                 >
                   Programming
-                </Link>
+                </StyledLink>
               </NavbarItem>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/apply-now"
                 >
                   Apply Now
-                </Link>
+                </StyledLink>
               </NavbarItem>
               <NavbarItem hasTextAlign="centered">
-                <Link
+                <StyledLink
                   activeStyle={{
-                    color: '#fe5823'
+                    color: flamingo
                   }}
-                  className="is-size-5 is-size-6-mobile"
+                  className="is-size-4 is-size-6-mobile"
                   to="/contact"
                 >
                   Contact
-                </Link>
+                </StyledLink>
               </NavbarItem>
             </NavbarEnd>
           </NavbarMenu>

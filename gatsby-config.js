@@ -6,7 +6,7 @@ module.exports = {
     description: 'Connecting mentors with young dreamers around the world.',
     siteUrl: 'https://www.mentorswithoutborders.net/',
     author: {
-      name: 'mentors Without Borders',
+      name: 'Mentors Without Borders',
       url: 'https://github.com/MentorsWithoutBorders',
       email: 'edmondpr@gmail.com'
     }
@@ -16,7 +16,7 @@ module.exports = {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./static/favicon.png",
-        appName: 'Metors Without Borders',
+        appName: 'Mentors Without Borders',
         appDescription: 'Connecting mentors with young dreamers around the world.',
         dir: 'auto',
         lang: 'en-US',
