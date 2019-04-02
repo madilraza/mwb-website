@@ -6,7 +6,7 @@ interface LayoutMainProps {
 }
 
 const LayoutMain: React.SFC<LayoutMainProps> = ({ children, className }) => (
-  <Container isFluid className={className}>
+  <Container isFluid className={className} style={{ margin: 0 }}>
     {children}
   </Container>
 )

@@ -1,25 +1,23 @@
 import * as React from 'react'
-import {Link} from 'gatsby'
-
+import styled from 'styled-components'
 import Page from '../components/Page'
-import {Section} from 'bloomer/lib/layout/Section'
+import { Section } from 'bloomer/lib/layout/Section'
 import IndexLayout from '../layouts'
+import BackgroundImage from '../../static/images/bg-about-us.png'
+
+const StyledBackground = styled.img`
+  max-width: 100%;
+  height: auto;
+`;
 
 const AboutUsPage = () => (
   <IndexLayout>
     <Page>
-      <Section className="content">
-        <ul>
-          <li>
-            <Link to="/a-markdown-page/">Show me some Markdown!</Link>
-          </li>
-          <li>
-            <Link to="/">Take me back home.</Link>
-          </li>
-        </ul>
+      <Section style={{ padding: 0 }}>
+        <StyledBackground src={BackgroundImage} />
       </Section>
     </Page>
-  </IndexLayout>
+  </IndexLayout >
 )
 
 export default AboutUsPage

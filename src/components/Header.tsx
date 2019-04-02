@@ -2,11 +2,16 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Navbar, NavbarBrand, NavbarItem, NavbarBurger, NavbarMenu, NavbarEnd } from 'bloomer'
-import { flamingo } from '../utils/colors'
+import { black, flamingo } from '../utils/colors'
 import logo from '../../static/logos/logo.png'
+
+const StyledTitleLink = styled(Link)`
+  padding-left: 20px;
+`
 
 const StyledLink = styled(Link)`
   font-family: 'Yanone Kaffeesatz';
+  color: ${black};
   &:hover {
     color: ${flamingo};
   }
@@ -26,8 +31,12 @@ const StyledLogo = styled.figure`
     width: 30px;
     height: 30px;
   }
-  img {
+  &.image img {
     margin-bottom: 0;
+    margin-left: 20px;
+  }
+  &.title span {
+    padding-left: 20px;
   }
 `
 
@@ -62,9 +71,9 @@ export default class Header extends React.PureComponent<HeaderProps, State> {
               </StyledLogo>
             </NavbarItem>
             <NavbarItem>
-              <Link className="title is-size-6-mobile is-size-4-tablet is-size-4-desktop" to="/">
+              <StyledTitleLink className="title is-size-6-mobile is-size-4-tablet is-size-4-desktop" to="/">
                 {title}
-              </Link>
+              </StyledTitleLink>
             </NavbarItem>
             <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
           </NavbarBrand>
